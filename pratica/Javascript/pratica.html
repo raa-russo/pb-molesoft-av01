@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+
+<h3>Exercicio 07</h3>
+<h1>Digite o valor:</h1>
+<input/>
+<button>Calcular</button>
+<br/>
+<script>
+
+    
+    function calculaQuantidadeMoedas(dinheiro){
+
+        
+        var moedas = [];     
+          
+    
+        for(var posicao = 0; posicao < 5; posicao++){
+            moedas[posicao] = 0;
+        }
+
+        
+        moedas[0] = Math.trunc(dinheiro/0.5);
+        dinheiro = parseFloat(dinheiro - Math.trunc(dinheiro/0.5)*0.5).toFixed(2);
+
+        
+        moedas[1] = Math.trunc(dinheiro/0.25);
+        dinheiro = parseFloat(dinheiro - Math.trunc(dinheiro/0.25)*0.25).toFixed(2);
+
+        
+        moedas[2] = Math.trunc(dinheiro/0.1);
+        dinheiro = parseFloat(dinheiro - Math.trunc(dinheiro/0.1)*0.1).toFixed(2);
+
+        
+        moedas[3] = Math.trunc(dinheiro/0.05);
+        dinheiro = parseFloat(dinheiro - Math.trunc(dinheiro/0.05)*0.05).toFixed(2);        
+        
+        return moedas;   
+    }
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function mostraNaTela(){
+
+        var moedas = calculaQuantidadeMoedas(input.value.replace(",","."));
+        var totalMoedas = 0;        
+
+        
+        for(var posicao = 0; posicao < 5; posicao++){
+            totalMoedas += moedas[posicao];
+        }
+
+
+        alert("Total de moedas: " + totalMoedas + "\n" +
+                "Sendo:\n" +
+                moedas[0] + " de 50 centavos\n" +
+                moedas[1] + " de 25 centavos\n" +
+                moedas[2] + " de 10 centavos\n" +
+                moedas[3] + " de 5 centavos\n" +
+                moedas[4] + " de 1 centavos\n");
+               
+
+        input.value = "";
+        input.focus();
+    }
+
+    var button = document.querySelector("button");
+    button.onclick = mostraNaTela;
+
+</script>
+  
