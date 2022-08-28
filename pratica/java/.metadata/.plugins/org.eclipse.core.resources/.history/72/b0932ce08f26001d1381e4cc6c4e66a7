@@ -1,0 +1,52 @@
+package Acesso;
+
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Login {
+
+	public static void main(String[] args) {
+		
+		String login;
+		String senha;
+		String LOGIN_SISTEMA = "admin";
+		String SENHA_SISTEMA = "12345";
+		Date hora = Calendar.getInstance().getTime();
+		SimpleDateFormat formatarHora = new SimpleDateFormat("HH");
+		int horario = Integer.parseInt(formatarHora.format(hora));
+		
+		String[] mensagem = new String[5];
+		mensagem[0] = "Bom dia, você se logou ao nosso sistema.";
+		mensagem[1] = "Boa tarde, você se logou ao nosso sistema.";
+		mensagem[2] = "Boa noite, você se logou ao nosso sistema.";
+		mensagem[3] = "Boa madrugada, você se logou ao nosso sistema.";
+		mensagem[4] = "Usuário e/ou senha incorretos.";
+				
+				
+		Scanner leitura;        
+		leitura = new Scanner(System.in);
+		
+		System.out.println("Digite o login:");
+		login = leitura.next();
+		
+		System.out.println("Digite o login:");
+		senha = leitura.next();
+
+		if(login.equals(LOGIN_SISTEMA) && senha.equals(SENHA_SISTEMA)) {
+			if(horario >= 6 && horario < 12)
+				System.out.println(mensagem[0]);
+			if(horario >= 12 && horario < 18)
+				System.out.println(mensagem[1]);
+			if(horario >= 18 && horario < 24)
+				System.out.println(mensagem[2]);
+			if(horario >= 0 && horario < 6)
+				System.out.println(mensagem[3]);			
+			
+		}else
+			System.out.println(mensagem[4]);
+	}
+
+}

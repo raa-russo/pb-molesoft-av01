@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\Usuario\Documents\Compass\pratica\java\.metadata\.plugins\org.eclipse.jdt.core
+8389393.index
+1454568920.index
+2005349255.index

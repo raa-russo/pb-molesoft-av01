@@ -1,0 +1,29 @@
+package Acesso;
+
+import java.util.Scanner;
+
+public class Login {
+
+	public static void main(String[] args) {
+		
+		private final String login;
+		private final String senha;
+		private String LOGIN_SISTEMA = "admin";
+		private String SENHA_SISTEMA = "12345";
+		
+		Scanner leitura;        
+		leitura = new Scanner(System.in);
+		
+		System.out.println("Digite o login:");
+		login = leitura.next();
+		
+		System.out.println("Digite o login:");
+		senha = leitura.next();
+
+		if(login == LOGIN_SISTEMA && senha == SENHA_SISTEMA) {
+			System.out.println("Logado");
+		}else
+			System.out.println("Usuário e/ou senha incorretos");
+	}
+
+}
